@@ -2,8 +2,8 @@ package id.sch.smktelkom_mlg.learn.simplerecyclerview;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 
 import java.util.ArrayList;
 
@@ -20,12 +20,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
+        StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
         mDataAdapter = new DataAdapter(getDataList());
         recyclerView.setAdapter(mDataAdapter);
 
-        setTitle("Grid Layout Manager RV");
+        setTitle("Staggered Grid Layout Manager RV");
     }
 
     public ArrayList<DataModel> getDataList() {
