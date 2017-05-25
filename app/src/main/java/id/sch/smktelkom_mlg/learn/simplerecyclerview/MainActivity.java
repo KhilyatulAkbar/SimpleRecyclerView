@@ -2,7 +2,7 @@ package id.sch.smktelkom_mlg.learn.simplerecyclerview;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -20,12 +20,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(layoutManager);
         mDataAdapter = new DataAdapter(getDataList());
         recyclerView.setAdapter(mDataAdapter);
 
-        setTitle("Simple Recycler View");
+        setTitle("Grid Layout Manager RV");
     }
 
     public ArrayList<DataModel> getDataList() {
@@ -33,19 +33,19 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<DataModel> datas = new ArrayList<>();
         DataModel data = new DataModel("PBO", "Diajar oleh Bapak Arifin, Menggunakan Netbeans", ColorUtil.getRandomColor());
         datas.add(data);
-        data = new DataModel("PPB", "Diajar oleh Bapak Hendra, Menggunakan Android Studio", ColorUtil.getRandomColor());
+        data = new DataModel("PPL", "Diajar oleh Ibu Ifa, Menggunakan Power Designer", ColorUtil.getRandomColor());
         datas.add(data);
-        data = new DataModel("Pemrograman Desktop", "Diajar oleh Bapak Hendro, Menggunakan Visual Studio", ColorUtil.getRandomColor());
+        data = new DataModel("PPB", "Diajar oleh Bapak Hendra, Menggunakan Aplikasi Android Studio", ColorUtil.getRandomColor());
         datas.add(data);
-        data = new DataModel("Pemrograman Web", "Diajar oleh Bapak Firdausa, Menggunakan Sublime Text", ColorUtil.getRandomColor());
+        data = new DataModel("ProgDes", "Diajar oleh Bapak Hendro, Menggunakan Visual Studio", ColorUtil.getRandomColor());
+        datas.add(data);
+        data = new DataModel("ProgWeb", "Diajar oleh Bapak Firdausa, Menggunakan Sublime Text", ColorUtil.getRandomColor());
         datas.add(data);
         data = new DataModel("Basis Data", "Diajar oleh Ibu Ifa, Menggunakan XAMPP", ColorUtil.getRandomColor());
         datas.add(data);
-        data = new DataModel("PPL", "Diajar oleh Ibu Ifa, Menggunakan Power Designer", ColorUtil.getRandomColor());
+        data = new DataModel("RBJ", "Diajar oleh Bapak Hirga, Menggunakan Aplikasi Cisco Packet Tracer", ColorUtil.getRandomColor());
         datas.add(data);
-        data = new DataModel("RBJ", "Diajar oleh Bapak Hirga, Mengguanakan ", ColorUtil.getRandomColor());
-        datas.add(data);
-        data = new DataModel("Administrasi Server", "Diajar oleh Bapak Susanto, Menggunakan Virtual Box", ColorUtil.getRandomColor());
+        data = new DataModel("AdServ", "Diajar oleh Bapak Susanto, Menggunakan Virtual Box", ColorUtil.getRandomColor());
         datas.add(data);
 
         return datas;
